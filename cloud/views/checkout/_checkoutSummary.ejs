@@ -1,0 +1,11 @@
+
+<div class="checkout-class">
+	<div class="checkout-line checkout-top">
+		<div class="subtotal-item">	<%= course.get('title') %> x 1 student </div>
+		<div class="subtotal-price">$<%= session.get('price') %></div>
+	</div>
+	<div class="checkout-line">
+		<div class="subtotal-item">	Total </div>
+		<div class="checkout-total-price">$<%= session.get('price') %></div>
+	</div>
+</div>

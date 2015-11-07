@@ -1,0 +1,15 @@
+
+<div class="checkout-course-summary-container">
+	<img class="course-image" src="<%= course.get('image').url() %>">
+	<div class="checkout-course-title"><%= course.get('title') %></div>	
+	<div class="checkout-course-text"><%= formatTime(session.get('startDate')) %> - <%= formatTime(session.get('endDate')) %></div>
+	<div class="checkout-course-text"><%= formatLongDate(session.get('startDate')) %></div>
+	<div class="checkout-course-section">
+		<div class="checkout-course-text"><strong><%= provider.get('name') %></strong></div>
+		<div class="checkout-course-text"><%= provider.get('addressStreet') %></div>
+		<div class="checkout-course-text"><%= provider.get('addressCity') %>, <%= provider.get('addressState') %></div>
+		<div class="checkout-course-text"><%= provider.get('phone') %></div>
+	</div>
+</div>
+
+

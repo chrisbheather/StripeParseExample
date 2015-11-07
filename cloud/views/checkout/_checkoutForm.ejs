@@ -1,0 +1,38 @@
+
+
+
+<div id="checkout-form-container">
+	<h3>Your Contact Information <small>(required)</small></h3>
+	<form action="/charge" method="POST" class="default-form">
+	  <input type="hidden" name="sessionId" value="<%= session.id %>">
+	  <div class="form-group">
+	    <!-- <label for="name">Participant Name</label> -->
+	    <input name="userName" type="text" class="form-control" id="participant-name" placeholder="Participant Name">
+	  </div>
+	  <div class="form-group">
+	    <!-- <label for="name">Your Email Address</label> -->
+	    <input name="userEmail" type="email" class="form-control" id="participant-email" placeholder="Email">
+	  </div>
+	  <script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_VRCHHAx7MDUMQRvjMm13LS0z"
+	    data-amount=<%= session.get('price') *100 %>
+	    data-name="Prosper Pass"
+	    data-description=<%=session.get('course').get("title") %>
+	    data-image=""
+	    data-locale="auto">
+	  </script>
+	</form>
+	<div class="credit-cards">
+		<img src="/images/visa.png"></img><img class="cc" src="/images/mastercard.png"></img><img class="cc" src="/images/discover.png"></img><img class="cc" src="/images/americanexpress.png"></img>
+	</div>
+	<div class="refund">
+	Refund policy: Cancel at least 48 hours before your class start time and we will offer you a complete refund. To cancel call us at (571) 882-9317
+	</div>
+</div>
+
+<script>
+  // new CheckoutFormView({
+  //   el: "#checkout-form-container"
+  // });
+</script>

@@ -1,0 +1,47 @@
+<div class="course-listing">
+	<div class="course-title"><%= course.get('title') %></div>
+	<div class="course-details-container">
+		<div class="course-image-container">
+			<img class="course-image" src="<%= course.get('image').url() %>">
+		</div>
+		<div class="course-description">
+			<%= course.get('description') %>
+		</div>
+	</div>
+	<div class="course-action-container">
+		<div class="action-third">
+			<div class="action-subtitle">
+				Offered by
+			</div>
+			<div class="third-title">
+				<%= course.get('provider').get('name') %>
+			</div>
+			<div class="third-details">
+				<%= course.get('provider').get('addressStreet') %> <br>
+				<%= course.get('provider').get('addressCity') %>, <%= course.get('provider').get('addressState') %>
+			</div>
+		</div>
+		<% sessions.forEach(function(session) { %>
+			<% if (session.get('course').id == course.id) { %>
+		<div class="action-third">
+			<div class="action-subtitle">
+				Next Class
+			</div>
+				<div class="third-title">
+					<%= formatDate(session.get('startDate')) %>
+				</div>
+				<div class="third-details">
+					<%= formatTime(session.get('startDate')) %> - <%= formatTime(session.get('endDate')) %>
+				</div>
+		</div>
+		<div class="action-third">
+			<%if (session.get('seatsAvailable') > 0) { %>
+				<a href="<%= 'https://www.prosperpass.co/checkout/' + session.id %>" class="btn btn-default btn-lg buy-course-button">BUY $<%= session.get('price') %></a>
+			<% } else { %>
+				<div class="warning-title">CLASS FULL</div>
+			<% } %>
+		</div>
+			<% } %>
+		<% }) %>
+	</div>
+</div>

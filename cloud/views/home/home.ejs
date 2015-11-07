@@ -1,0 +1,40 @@
+<% include ../_header %>
+
+<% include ../_navbar %>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="row-xs-12">
+			<div class="main-banner">
+				<span class="main-title">Unforgettable classes in Philadelphia</span>
+				<div class="main-subtitle">Unique experiences with the best instructors.<br> 
+				All in one easy pass.</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="separator-bar">
+	<span class="separator-text">Cooking - Improv - Mixology - Music - Ceramics</span>
+</div>
+
+<div class="course-listings-container">
+	<div class="headline-courses">
+		Find Your Next Passion
+	</div>
+
+	<% courses.forEach(function(course) { %>
+  		<% include _courseListing %>
+   <% }) %>
+
+
+</div>
+
+<div class="benefits-banner">
+	<div class="benefits-title">
+		Break the routine, <br>
+		Learn new skills, <br>
+		Meet fun people.
+	</div>
+</div>
+
+<% include ../_footer %>
