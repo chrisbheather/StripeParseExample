@@ -5,7 +5,6 @@ app = express();
 var _ = require('underscore');
 
 
-
 //Controllers
 var buyController = require('cloud/controllers/buyController.js');
 
